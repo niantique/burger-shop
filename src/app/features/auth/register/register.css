@@ -1,0 +1,51 @@
+:root {
+  --color-orange: rgba(248, 154, 47, 1);
+  --main-font: 'Poppins', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 900;
+}
+
+#formRegister {
+  text-align: center;
+  margin-bottom: 50vh;
+
+  input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: none;
+    height: 5vh;
+  }
+  input::placeholder {
+    color: white;
+    text-align: center;
+  }
+  input:first-child {
+    width: 28vw;
+    margin-bottom: 1vh;
+  }
+  input:nth-of-type(2) {
+    margin-right: 1vw;
+  }
+  input:nth-of-type(2),
+  input:nth-of-type(3) {
+    width: 13.5vw;
+    margin-bottom: 1vh;
+  }
+  input, textarea {
+    color: white;
+  }
+
+  button {
+    background-color: var(--color-orange);
+    width: 13vw;
+    height: 7vh;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 3vh;
+  }
+}

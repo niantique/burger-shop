@@ -1,0 +1,16 @@
+<nav id="navbar">
+    <a>LOGO</a>
+    <div>
+    <ng-container *ngIf="auth.isAuthenticated(); else notConnected">
+        <a (click)="auth.logout()">Me déconnecter</a>
+        <a routerLink="/profile" routerLinkActive="active">Mon profile</a>
+    </ng-container>
+
+    <ng-template #notConnected>
+    <a routerLink="/register" routerLinkActive="active">Inscription</a>
+    <a routerLink="/login" routerLinkActive="active">Connexion</a>
+    </ng-template>
+    <a routerLink="/cart">Panier</a>
+</div>
+    
+</nav>

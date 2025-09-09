@@ -1,0 +1,37 @@
+#profile {
+  margin-left: 5vw;
+
+  h2 {
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    display: flex;
+    li {
+      display: flex;
+      background-color: rgb(30, 30, 30);
+      border: solid 1px rgb(49, 49, 49);
+      border-radius: 10px;
+      margin-bottom: 2vh;
+      margin-right: 2vw;
+      height: 18vh;
+      width: 22vw;
+      border-radius: 15px;
+      img {
+        width: 37%;
+        height: 80%;
+        object-fit: contain;
+        margin-top: 2.5vh;
+        margin-left: 1vw;
+      }
+      div {
+        margin-left: 0.5vw;
+        p:first-child {
+            font-weight: 800;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<app-back-home-button></app-back-home-button>
+
+<section id="detailBurger">
+  <ng-container *ngIf="burger$ | async as burger">
+    <h1>{{ burger.name }}</h1>
+
+    <div class="cardDetail">
+      <div class="imgWrapper">
+        <img [src]="burger.image" alt="{{ burger.name }}" (error)="onImageError($event)" />
+        <div *ngIf="!burger.isAvailable" class="overlay">Produit indisponible</div>
+      </div>
+
+      <div class="detail">
+        <h2>Description</h2>
+        <p>{{ burger.description }}</p>
+
+        <div class="priceBtn">
+          <p class="price">{{ burger.price | currency : 'EUR' }}</p>
+          <app-button
+            [label]="'Ajouter au panier'"
+            [type]="'button'"
+            [variant]="burger.isAvailable ? 'orange' : 'grey'"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>
+
+<section id="suggestion">
+  <h2>Nos autres propositions</h2>
+
+  <div class="container">
+    <div *ngFor="let burger of suggestedBurgers$ | async" class="card">
+      <div class="imgWrapper">
+        <img [src]="burger.image" alt="{{ burger.name }}" (error)="onImageError($event)" />
+        <div *ngIf="!burger.isAvailable" class="overlay">Produit indisponible</div>
+      </div>
+      <h3>{{ burger.name }}</h3>
+      <p>{{ burger.price | currency : 'EUR' }}</p>
+      <div class="btnWrapper">
+        <a [routerLink]="['/products', burger.id]" class="infoButton">i</a>
+        <app-button
+          [label]="'Ajouter au panier'"
+          [type]="'button'"
+          [variant]="burger.isAvailable ? 'orange' : 'grey'"
+        >
+        </app-button>
+      </div>
+    </div>
+  </div>
+</section>

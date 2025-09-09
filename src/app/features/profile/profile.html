@@ -1,0 +1,23 @@
+<app-back-home-button></app-back-home-button>
+<section id="profile">
+  <h2>{{ prenom }}</h2>
+
+  <div *ngIf="orders().length > 0; else noOrders">
+    <div *ngFor="let order of orders()" class="order">
+      <h3>{{ order.date | date : 'fullDate' }}</h3>
+      <ul>
+        <li *ngFor="let item of order.items">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" />
+          <div class="history">
+            <p>{{ item.name }}</p>
+            <p>{{ item.price | currency:'EUR'}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ng-template #noOrders>
+    <p>Aucune commande enregistrée pour le moment.</p>
+  </ng-template>
+</section>

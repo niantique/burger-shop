@@ -1,0 +1,13 @@
+<h1>Je me connecte</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()" id="formRegister">
+
+    <input formControlName="email" placeholder="E-mail"><br>
+    <div *ngIf="email.invalid && email.touched" class="error">Email invalide.</div>
+    
+    <input formControlName="password" type="password" placeholder="Mot de Passe"><br>
+    <div *ngIf="password?.invalid && password?.touched" class="error">Mot de passe requis.</div>
+    <app-button label="Se connecter" type="submit" variant="orange"></app-button>
+</form>
+
+<p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>

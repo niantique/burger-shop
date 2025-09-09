@@ -1,0 +1,24 @@
+<section id="burgerList">
+
+    <div class="burgerListClass">
+
+        <div *ngFor="let burger of (burgers$ | async)?.items" class="card">
+            <div class="imgWrapper">
+            <img [src]="burger.imageUrl" alt="{{ burger.name }}" (error)="onImageError($event)">
+            <div *ngIf="!burger.isAvailable" class="overlay">Produit indisponible</div>
+            </div>
+            <h3>{{ burger.name }}</h3>
+            <p>{{ burger.price | currency:'EUR'}}</p>
+            <div class="btnWrapper">
+            <a [routerLink]="['/products', burger.id]" class="infoButton">i</a>
+            <app-button 
+            [label]="'Ajouter au panier'"
+            [type]="'button'"
+            [variant]="burger.isAvailable ? 'orange' : 'grey'"
+            (click)="addToCart(burger)"
+            ></app-button>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,32 @@
+:root {
+  --color-orange: rgba(248, 154, 47, 1);
+  --main-font: 'Poppins', sans-serif;
+}
+
+#heroSection {
+  div {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('https://images.unsplash.com/photo-1602192103300-47e66756152e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    width: 90vw;
+    margin-left: 5vw;
+    height: 75vh;
+    border-radius: 30px;
+
+    p {
+      padding-top: 35vh;
+      width: 60%;
+      padding-left: 5%;
+      line-height: 1.5;
+    }
+    h1 {
+      color: var(--color-orange);
+      font-size: 14em;
+      text-transform: uppercase;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}

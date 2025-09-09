@@ -1,0 +1,44 @@
+<app-back-home-button></app-back-home-button>
+
+<section id="cart">
+  <h1>Panier</h1>
+
+  <ng-container *ngIf="burgers().length > 0; else emptyCart">
+  <div class="cartContainer">
+    <div class="burgerList">
+      <div *ngFor="let burger of burgers()" class="card">
+        <img [src]="burger.imageUrl" alt="{{ burger.name }}" (error)="onImageError($event)" />
+        <div class="info">
+          <div>
+            <h2>{{ burger.name }}</h2>
+            <p>{{ burger.price | currency : 'EUR' }}</p>
+          </div>
+          <app-button
+            [label]="'Supprimer'"
+            [type]="'button'"
+            [variant]="'red'"
+            (click)="removeBurger(burger.id)"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="recap">
+      <h2>Récapitulatif</h2>
+      <p>Total</p>
+      <p class="price">{{ total() | currency : 'EUR' }}</p>
+
+      <app-button
+        [label]="'Commander'"
+        [type]="'button'"
+        [variant]="'black'"
+        (click)="checkout()"
+      ></app-button>
+    </div>
+  </div>
+    </ng-container>
+
+    <ng-template #emptyCart>
+        <p class="empty">Votre panier est vide</p>
+    </ng-template>
+</section>

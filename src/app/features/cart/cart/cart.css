@@ -1,0 +1,55 @@
+#cart {
+  margin-left: 5vw;
+  h1 {
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+  }
+  .cartContainer {
+    display: flex;
+
+    .burgerList {
+      .card {
+        display: flex;
+        width: 65vw;
+        background-color: rgb(30, 30, 30);
+        border: solid 1px rgb(49, 49, 49);
+        border-radius: 10px;
+        margin-bottom: 2vh;
+        height: 20vh;
+        margin-right: 2vw;
+
+        img {
+          width: 10vw;
+          margin-right: 3vw;
+          object-fit: cover;
+        }
+        .info {
+          justify-content: space-between;
+          display: flex;
+          width: 75%;
+        }
+      }
+    }
+  }
+
+  .recap {
+    background-color: rgba(248, 154, 47, 1);
+    color: black;
+    border-radius: 5px;
+    width: 20vw;
+    padding-left: 5vw;
+    padding-bottom: 5vh;
+    height: 35vh;
+    .price {
+      font-weight: 800;
+      font-size: 2em;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.empty {
+    color: grey;
+}

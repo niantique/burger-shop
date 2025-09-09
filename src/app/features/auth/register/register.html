@@ -1,0 +1,16 @@
+<h1>Je m'inscris</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()" id="formRegister">
+
+    <input formControlName="name" placeholder="Nom"><br>
+    <div *ngIf="name.invalid && name.touched" class="error">Le nom est requis.</div>
+    
+    <input formControlName="email" placeholder="E-mail">
+    <div *ngIf="email.invalid && email.touched" class="error">Adresse email invalid</div>
+
+    <input formControlName="password" type="password" placeholder="Mot de Passe"><br>
+    <div *ngIf="password?.invalid && password?.touched" class="error">Mot de passe requis (min. 6 caractères).</div>
+    <app-button label="Confirmer" type="submit" variant="orange"></app-button>
+</form>
+
+<p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
