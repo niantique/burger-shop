@@ -6,7 +6,7 @@
 
     <div class="cardDetail">
       <div class="imgWrapper">
-        <img [src]="burger.image" alt="{{ burger.name }}" (error)="onImageError($event)" />
+        <img [src]="burger.imageUrl" alt="{{ burger.name }}" (error)="onImageError($event)" />
         <div *ngIf="!burger.isAvailable" class="overlay">Produit indisponible</div>
       </div>
 
@@ -33,7 +33,7 @@
   <div class="container">
     <div *ngFor="let burger of suggestedBurgers$ | async" class="card">
       <div class="imgWrapper">
-        <img [src]="burger.image" alt="{{ burger.name }}" (error)="onImageError($event)" />
+        <img [src]="burger.imageUrl" alt="{{ burger.name }}" (error)="onImageError($event)" />
         <div *ngIf="!burger.isAvailable" class="overlay">Produit indisponible</div>
       </div>
       <h3>{{ burger.name }}</h3>
